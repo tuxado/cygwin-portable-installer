@@ -115,7 +115,7 @@ echo # Installing [Cygwin Portable]...
 echo ###########################################################
 echo.
 
-set "INSTALL_ROOT=%~dp0"
+set "INSTALL_ROOT=%~dp0\bin\"
 
 :: load customizations from separate file if exists
 set "custom_config_file=%INSTALL_ROOT%cygwin-portable-installer-config.cmd"
@@ -328,7 +328,7 @@ echo Creating [%Init_sh%]...
     echo # Installing conemu if required
     echo #
     echo conemu_dir=$(cygpath -w "$CYGWIN_ROOT/../conemu"^)
-    echo if [[ ^^! -e $conemu_dir ]]; then
+    echo if [[ ^! -e $conemu_dir ]]; then
     echo   echo "*******************************************************************************"
     echo   echo "* Installing ConEmu..."
     echo   echo "*******************************************************************************"
@@ -345,7 +345,7 @@ echo Creating [%Init_sh%]...
     echo #
     echo # Installing Ansible if not yet installed
     echo #
-    echo if [[ ^^! -e /opt/ansible ]]; then
+    echo if [[ ^! -e /opt/ansible ]]; then
     echo   echo "*******************************************************************************"
     echo   echo "* Installing [Ansible - %ANSIBLE_GIT_BRANCH%]..."
     echo   echo "*******************************************************************************"
@@ -374,7 +374,7 @@ echo Creating [%Init_sh%]...
     echo #
     echo # Installing apt-cyg package manager if not yet installed
     echo #
-    echo if [[ ^^! -x /usr/local/bin/apt-cyg ]]; then
+    echo if [[ ^! -x /usr/local/bin/apt-cyg ]]; then
     echo   echo "*******************************************************************************"
     echo   echo "* Installing apt-cyg..."
     echo   echo "*******************************************************************************"
@@ -388,7 +388,7 @@ echo Creating [%Init_sh%]...
     echo #
     echo # Installing bash-funk if not yet installed
     echo #
-    echo if [[ ^^! -e /opt/bash-funk/bash-funk.sh ]]; then
+    echo if [[ ^! -e /opt/bash-funk/bash-funk.sh ]]; then
     echo   echo "*******************************************************************************"
     echo   echo "* Installing [bash-funk]..."
     echo   echo "*******************************************************************************"
@@ -409,12 +409,12 @@ echo Creating [%Init_sh%]...
     echo #
     REM TODO requires gcc-g++, git, python
     REM echo export NVM_DIR=/opt/nvm
-    REM echo if [[ ^^! -e $NVM_DIR ]]; then
+    REM echo if [[ ^! -e $NVM_DIR ]]; then
     REM echo   nvm_version=$^(curl -s https://api.github.com/repos/nvm-sh/nvm/releases/latest ^| grep -Po 'tag_name": "\Kv[0-9.]+'^)
     REM echo   mkdir /opt/nvm
     REM echo   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/$nvm_version/install.sh ^| bash
     REM echo fi
-    echo if [[ ^^! -e /opt/nodejs/current ]]; then
+    echo if [[ ^! -e /opt/nodejs/current ]]; then
     echo   nodejs_ver=%NODEJS_VERSION%
     echo   if [[ $nodejs_ver == latest* ]]; then
     echo     nodejs_ver=$^(curl -s https://nodejs.org/dist/$nodejs_ver/ ^| grep -oP 'node-^(\K[v0-9.]+[0-9]^)' ^| head -n1^)
@@ -440,7 +440,7 @@ echo Creating [%Init_sh%]...
     echo #
     echo # Installing testssl.sh if not yet installed
     echo #
-    echo if [[ ^^! -e /opt/testssl/testssl.sh ]]; then
+    echo if [[ ^! -e /opt/testssl/testssl.sh ]]; then
     echo   echo "*******************************************************************************"
     echo   echo "* Installing [testssl.sh - %TESTSSL_GIT_BRANCH%]..."
     echo   echo "*******************************************************************************"
@@ -461,7 +461,7 @@ echo Creating [%Init_sh%]...
     echo #
     echo # Installing winpty if not yet installed
     echo #
-    echo if [[ ^^! -e /bin/winpty.exe ]]; then
+    echo if [[ ^! -e /bin/winpty.exe ]]; then
     echo   echo "*******************************************************************************"
     echo   echo "* Installing [winpty - %WINPTY_VERSION%]..."
     echo   echo "*******************************************************************************"
