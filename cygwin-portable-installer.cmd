@@ -115,7 +115,7 @@ echo # Installing [Cygwin Portable]...
 echo ###########################################################
 echo.
 
-set "INSTALL_ROOT=%~dp0\bin\"
+set "INSTALL_ROOT=%~dp0"
 
 :: load customizations from separate file if exists
 set "custom_config_file=%INSTALL_ROOT%cygwin-portable-installer-config.cmd"
